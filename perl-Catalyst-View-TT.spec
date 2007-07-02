@@ -2,10 +2,10 @@
 %define name	perl-%{realname}
 %define	modprefix Catalyst
 
-%define version	0.23
+%define version	0.25
 
 %define	rel	2
-%define release	%mkrel %{rel}
+%define release	%mkrel 1
 
 Summary:	Catalyst TT View Class
 Name:		%{name}
