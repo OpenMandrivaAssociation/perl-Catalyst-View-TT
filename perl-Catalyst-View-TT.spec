@@ -24,6 +24,7 @@ BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
 BuildRequires:	perl(Template::Timer)
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 This is the Catalyst view class for the Template Toolkit. Your application
