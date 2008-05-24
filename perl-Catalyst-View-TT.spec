@@ -1,10 +1,7 @@
-%define realname Catalyst-View-TT
-%define name	perl-%{realname}
+%define module Catalyst-View-TT
+%define name	perl-%{module}
 %define	modprefix Catalyst
-
-%define version	0.26
-
-%define	rel	1
+%define version	0.27
 %define release	%mkrel 1
 
 Summary:	Catalyst TT View Class
@@ -13,18 +10,14 @@ Version:	%{version}
 Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{realname}-%{version}.tar.bz2
-Patch0:		Catalyst-View-TT-subclass.patch
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+URL:		http://search.cpan.org/dist/%{module}/
+Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-Catalyst >= 5.50
 BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
 BuildRequires:	perl(Template::Timer)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is the Catalyst view class for the Template Toolkit. Your application
@@ -34,8 +27,7 @@ replaced with whatever your application is called). This script is created as
 part of the Catalyst setup.
 
 %prep
-%setup -q -n %{realname}-%{version}
-%patch0 -p0 -b .rgs
+%setup -q -n %{module}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
