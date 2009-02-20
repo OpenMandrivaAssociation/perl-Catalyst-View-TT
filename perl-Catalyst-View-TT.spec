@@ -20,6 +20,7 @@ BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
 BuildRequires:	perl(Template::Timer)
 BuildRequires:  perl(Template::Provider::Encoding)
+BuildRequires:  perl(MRO::Compat)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
