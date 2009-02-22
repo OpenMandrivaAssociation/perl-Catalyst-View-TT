@@ -1,7 +1,7 @@
 %define module Catalyst-View-TT
 %define name	perl-%{module}
 %define	modprefix Catalyst
-%define version	0.28
+%define version	0.29
 %define release	%mkrel 1
 
 Summary:	Catalyst TT View Class
