@@ -1,20 +1,19 @@
-%define module Catalyst-View-TT
-%define name	perl-%{module}
-%define	modprefix Catalyst
-%define version	0.29
-%define release	%mkrel 1
+%define upstream_name    Catalyst-View-TT
+%define upstream_version 0.29
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Catalyst TT View Class
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
 # This patch done originally by rgs allow to specify the Template class to use
 # Need for compatibility with CS4 for fibric
 Patch0:     Catalyst-View-TT-template_class.patch
+
 BuildRequires:	perl-Catalyst >= 5.50
 BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
@@ -22,7 +21,7 @@ BuildRequires:	perl(Template::Timer)
 BuildRequires:  perl(Template::Provider::Encoding)
 BuildRequires:  perl(MRO::Compat)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is the Catalyst view class for the Template Toolkit. Your application
@@ -32,7 +31,7 @@ replaced with whatever your application is called). This script is created as
 part of the Catalyst setup.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p0
 
 %build
@@ -46,12 +45,11 @@ part of the Catalyst setup.
 rm -rf %{buildroot}
 %makeinstall_std
 
-%files
-%defattr(-,root,root)
-%doc README Changes
-%{perl_vendorlib}/%{modprefix}
-%{_mandir}/*/*
-
 %clean
 rm -rf %{buildroot}
 
+%files
+%defattr(-,root,root)
+%doc README Changes
+%{perl_vendorlib}/Catalyst
+%{_mandir}/*/*
