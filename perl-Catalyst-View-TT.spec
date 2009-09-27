@@ -14,7 +14,7 @@ Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}
 # Need for compatibility with CS4 for fibric
 Patch0:     Catalyst-View-TT-0.30-template_class.patch
 
-BuildRequires:	perl-Catalyst >= 5.50
+BuildRequires:	perl(Catalyst) >= 5.50
 BuildRequires:  perl(MRO::Compat)
 BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
