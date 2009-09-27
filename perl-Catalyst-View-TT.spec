@@ -12,14 +12,15 @@ Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 # This patch done originally by rgs allow to specify the Template class to use
 # Need for compatibility with CS4 for fibric
-Patch0:     Catalyst-View-TT-template_class.patch
+Patch0:     Catalyst-View-TT-0.30-template_class.patch
 
 BuildRequires:	perl-Catalyst >= 5.50
+BuildRequires:  perl(MRO::Compat)
 BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
-BuildRequires:	perl(Template::Timer)
 BuildRequires:  perl(Template::Provider::Encoding)
-BuildRequires:  perl(MRO::Compat)
+BuildRequires:	perl(Template::Timer)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
