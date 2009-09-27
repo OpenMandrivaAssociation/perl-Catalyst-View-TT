@@ -1,5 +1,5 @@
 %define upstream_name    Catalyst-View-TT
-%define upstream_version 0.29
+%define upstream_version 0.30
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Catalyst TT View Class
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 # This patch done originally by rgs allow to specify the Template class to use
 # Need for compatibility with CS4 for fibric
 Patch0:     Catalyst-View-TT-template_class.patch
@@ -32,7 +32,7 @@ part of the Catalyst setup.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p0
+%patch0 -p2
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
