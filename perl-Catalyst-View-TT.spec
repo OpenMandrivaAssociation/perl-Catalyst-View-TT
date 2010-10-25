@@ -1,5 +1,5 @@
 %define upstream_name    Catalyst-View-TT
-%define upstream_version 0.35
+%define upstream_version 0.36
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,7 +14,7 @@ Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}
 # Need for compatibility with CS4 for fibric
 Patch0:     Catalyst-View-TT-0.30-template_class.patch
 
-BuildRequires:	perl(Catalyst) >= 5.50
+BuildRequires:	perl(Catalyst) >= 5.700
 BuildRequires:  perl(MRO::Compat)
 BuildRequires:	perl(Path::Class)
 BuildRequires:	perl(Template)
