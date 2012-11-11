@@ -1,0 +1,22 @@
+--- BUILD/Catalyst-View-TT-0.30/lib/Catalyst/View/TT.pm.orig	2009-09-27 19:02:57.000000000 +0200
++++ BUILD/Catalyst-View-TT-0.30/lib/Catalyst/View/TT.pm	2009-09-27 19:04:20.000000000 +0200
+@@ -140,6 +140,8 @@
+     Scalar::Util::weaken($copy);
+     $config->{INCLUDE_PATH} = [ sub { $copy->paths } ];
+ 
++    my $template_class = $config->{template_class} || 'Template';
++
+     if ( $config->{PROVIDERS} ) {
+         my @providers = ();
+         if ( ref($config->{PROVIDERS}) eq 'ARRAY') {
+@@ -185,8 +187,8 @@
+     }
+ 
+     $self->{template} =
+-        Template->new($config) || do {
+-            my $error = Template->error();
++        $template_class->new($config) || do {
++            my $error = $template_class->error();
+             $c->log->error($error);
+             $c->error($error);
+             return undef;
