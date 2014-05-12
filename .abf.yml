@@ -1,2 +1,4 @@
+removed_sources:
+  Catalyst-View-TT-0.36.tar.gz: 2822d70eb94ad31dd6610707f23a06af244bebcf
 sources:
-  "Catalyst-View-TT-0.36.tar.gz": 2822d70eb94ad31dd6610707f23a06af244bebcf
+  Catalyst-View-TT-0.41.tar.gz: 46f517e6b8d5e73d36c7bada2a27a501340116ab
