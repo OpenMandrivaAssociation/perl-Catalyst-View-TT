@@ -11,9 +11,6 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
-# This patch done originally by rgs allow to specify the Template class to use
-# Need for compatibility with CS4 for fibric
-Patch0:		Catalyst-View-TT-0.30-template_class.patch
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Catalyst) >= 5.700
@@ -34,7 +31,6 @@ part of the Catalyst setup.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p2
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
